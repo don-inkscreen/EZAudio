@@ -145,7 +145,7 @@ FOUNDATION_EXPORT UInt32 const EZAudioPlotDefaultMaxHistoryBufferLength;
  */
 - (CGPathRef)createPathWithPoints:(CGPoint *)points
                        pointCount:(UInt32)pointCount
-                           inRect:(EZRect)rect;
+                           inRect:(EZRect)rect CF_RETURNS_RETAINED;
 
 //------------------------------------------------------------------------------
 

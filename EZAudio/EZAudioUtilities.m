@@ -526,10 +526,13 @@ BOOL __shouldExitOnCheckResultFail = YES;
 + (void)checkResult:(OSStatus)result operation:(const char *)operation
 {
     if (result == noErr) return;
-    char errorString[20];
+    char errorString[20] = "";
     // see if it appears to be a 4-char-code
     *(UInt32 *)(errorString + 1) = CFSwapInt32HostToBig(result);
-    if (isprint(errorString[1]) && isprint(errorString[2]) && isprint(errorString[3]) && isprint(errorString[4]))
+    if (isprint(errorString[1]) &&
+		isprint(errorString[2]) &&
+		isprint(errorString[3]) &&
+		isprint(errorString[4]))
     {
         errorString[0] = errorString[5] = '\'';
         errorString[6] = '\0';
@@ -547,7 +550,7 @@ BOOL __shouldExitOnCheckResultFail = YES;
 
 + (NSString *)stringFromUInt32Code:(UInt32)code
 {
-    char errorString[20];
+    char errorString[20] = "";
     // see if it appears to be a 4-char-code
     *(UInt32 *)(errorString + 1) = CFSwapInt32HostToBig(code);
     if (isprint(errorString[1]) &&
