@@ -243,6 +243,7 @@ UInt32 const EZAudioPlotDefaultMaxHistoryBufferLength = 8192;
 
 - (void)redraw
 {
+	if (!self.skipDrawing) {
     EZRect frame = [self.waveformLayer frame];
     CGPathRef path = [self createPathWithPoints:self.points
                                      pointCount:self.pointCount

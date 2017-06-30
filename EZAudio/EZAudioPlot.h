@@ -104,6 +104,7 @@ FOUNDATION_EXPORT UInt32 const EZAudioPlotDefaultMaxHistoryBufferLength;
  An EZAudioPlotWaveformLayer that is used to render the actual waveform. By switching the drawing code to Core Animation layers in version 0.2.0 most work, specifically the compositing step, is now done on the GPU. Hence, multiple EZAudioPlot instances can be used simultaneously with very low CPU overhead so these are now practical for table and collection views.
  */
 @property (nonatomic, strong) EZAudioPlotWaveformLayer *waveformLayer;
+@property (nonatomic, assign) BOOL skipDrawing;
 
 //------------------------------------------------------------------------------
 #pragma mark - Adjust Resolution
